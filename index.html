@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codeMat-js</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="hd-title">
+            <h1 style="color: whitesmoke; ">JavaScript Cheat Sheet</h1>
+        </div>
+            <div class="container">
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+                <i class="fa-solid fa-xmark" id="close-icon" style="display: none;"></i>
+  
+              
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#Variables"> <span>⬤ </span> Variables</a></li>
+                    <li><a href="#Operators"> <span>⬤ </span> Operators</a></li>
+                    <li><a href="#Strings"> <span>⬤ </span> Strings</a></li>
+                    <li><a href="#Arrays"> <span>⬤ </span> Arrays</a></li>
+                    <li><a href="#Functions"> <span>⬤ </span> Functions</a></li>
+                    <li><a href="#Objects"> <span>⬤ </span> Objects</a></li>
+                    <li><a href="#Loops"> <span>⬤ </span> Loops</a></li>
+                    <li><a href="#DOMContent"> <span>⬤ </span> DOM Manipulation</a></li>
+                    <li><a href="#FetchAPI"> <span>⬤ </span> Fetch API</a></li>
+                    <li><a href="#AsyncJavaScript"> <span>⬤ </span> Async JavaScript</a></li>
+                    <li><a href="#Closures"> <span>⬤ </span> Closures</a></li>
+                    <li><a href="#JSModules"> <span>⬤ </span> JavaScript Modules</a></li>
+                    <li><a href="#DesignPatterns"> <span>⬤ </span> Design Patterns</a></li>
+                    <li><a href="#EventLoop"> <span>⬤ </span> Event Loop</a></li>
+                    <li><a href="#best-practices"> <span>⬤ </span> Best Practices</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<br>
+    <main>
+        <section id="Variables" class="section">
+            <h1>1.Variables and Data Types</h1>
+            <h3><b>Variables:</b></h3>
+            <pre><code>
+                var a;                          // variable
+                var b = "init";                 // string
+                var c = "Hi" + " " + "Joe";     // = "Hi Joe"
+                var d = 1 + 2 + "3";            // = "33"
+                var e = [2,3,5,8];              // array
+                var f = false;                  // boolean
+                var g = /()/;                   // RegEx
+                var h = function(){};           // function object
+                const PI = 3.14;                // constant
+                var a = 1, b = 2, c = a + b;    // one line
+                let z = 'zzz';                  // block scope local variable</code></pre>
+            <p><li> var: Old method, not recommended.</li>
+                <li>let: Modern, for changeable values.</li>
+                <li>const: For values that should not change.</li></p>
+            <h3><b>Data Types:</b></h3>
+            <pre><code>
+                let name = "John";         // String
+                let age = 30;              // Number
+                let isHappy = true;        // Boolean
+                let fruits = ["Apple", "Banana"]; // Array
+                let person = { name: "John", age: 30 }; // Object
+                let empty = null;          // Null
+                let notAssigned;           // Undefined
+
+            </code></pre>
+
+            <h3><b>Type Conversion :</b></h3>
+            <pre><code>
+                let strNum = String(123);  // "123" (Number to String)
+                let numStr = Number("42"); // 42 (String to Number)
+
+            </code></pre>
+        </section>
+
+        <section id="Operators" class="section">
+            <h1>2. Operators</h1>
+            <h3><b>Arithmetic Operators:</b></h3>
+            <pre><code>
+                let sum = 5 + 3;    // 8 (Addition)
+                let diff = 5 - 3;   // 2 (Subtraction)
+                let prod = 5 * 3;   // 15 (Multiplication)
+                let div = 5 / 2;    // 2.5 (Division)
+                let rem = 5 % 2;    // 1 (Remainder)
+                let exp = 2 ** 3;   // 8 (Exponent)
+
+            </code></pre>
+            <h3><b>Comparison Operators:</b></h3>
+            <pre><code>
+                let isequal = (5 == '5');       // true (loose equality)
+                let isStrictEqual = (5 === '5'); // false (strict equality)
+                let isGreater = (5 > 3);   // true
+                let isLessOrEqual = (5 <= 5); // true
+            </code></pre>
+            <h3><b>Logical Operators:</b></h3>
+            <pre><code>
+                let andCondition = (true && false); // false
+                let orCondition = (true || false);  // true
+                let notCondition = !true;            // false
+            </code></pre>
+        </section>
+
+        <section id="Strings" class="section">
+            <h1>3. Strings</h1>
+            <h3><b>String Concatenation:</b></h3>
+            <pre><code>
+                let greeting = "Hello, " + "World!"; // "Hello, World!"
+            </code></pre>
+            <h3><b>Common String Methods:</b></h3>
+            <pre><code>
+                let str = "JavaScript";
+                str.length;                // 10 (Length of string)
+                str.toUpperCase();         // "JAVASCRIPT" (Uppercase)
+                str.toLowerCase();         // "javascript" (Lowercase)
+                str.includes("Script");    // true (Checks if "Script" exists)
+                str.slice(0, 4);           // "Java" (Extracts part of string)
+                str.substring(0, 4);       // "Java"
+            </code></pre>
+        </section>
+
+        <section id="Arrays" class="section">
+            <h1>4. Arrays</h1>
+            <h3><b>Array Declaration:</b></h3>
+            <pre><code>
+                let fruits = ["Apple", "Banana", "Cherry"]; // Array of strings
+            </code></pre>
+            <h3><b>Array Methods:</b></h3>
+            <pre><code>
+                fruits.push("Mango");        // Adds "Mango" at the end.
+                fruits.pop();               // Removes last item.
+                fruits.shift();             // Removes first item.
+                fruits.unshift("Kiwi");     // Adds "Kiwi" at the beginning.
+                fruits.sort();              // Sorts alphabetically. 
+                fruits.indexOf("Banana");   // Finds index of "Banana"
+            </code></pre>
+        </section>
+
+        <section id="Functions" class="section">
+            <h1>5. Functions</h1>
+            <h3><b>Regular Functions:</b></h3>
+            <pre><code>
+                function add(a, b) {
+                    return a + b;
+                }
+                let result = add(5, 3); // 8
+            </code>
+                         {or}
+            <code>
+                function greet(name) {
+                    return `Hello, ${name}`;
+                }
+                console.log(greet("Alice"));
+                
+            </code>
+        </pre>
+            <h3><b>Arrow Functions:</b></h3>
+            <pre><code>
+                const multiply = (a, b) => a * b;
+                let product = multiply(5, 3); // 15
+            </code>
+                           {or}
+        <code>
+                const greet = (name) => `Hello, ${name}`;
+                console.log(greet("Alice"));
+                
+            </code>
+    </pre>
+        </section>
+
+        <section id="Objects" class="section">
+            <h1>6. Objects</h1>
+            <h3><b>Object Declaration:</b></h3>
+            <pre><code>
+                let person = {
+                    name: "John",
+                    age: 30,
+                    greet: function() {
+                        console.log("Hello, " + this.name);
+                    }
+                };
+                person.greet(); // "Hello, John"
+            </code></pre>
+        </section>
+
+        <section id="Loops" class="section">
+            <h1>7. Loops and Control Flow</h1>
+            <h3><b>If Statement:</b></h3>
+            <pre><code>
+                let age = 18;
+                if (age >= 18) {
+                    console.log("You are an adult.");
+                }
+            </code></pre>
+        
+            <h3><b>If-Else Statement:</b></h3>
+            <pre><code>
+                let age = 16;
+                if (age >= 18) {
+                    console.log("You are an adult.");
+                } else {
+                    console.log("You are a minor.");
+                }
+            </code></pre>
+        
+            <h3><b>Nested If Statement:</b></h3>
+            <pre><code>
+                let age = 20;
+                if (age >= 18) {
+                    console.log("You are an adult.");
+                    if (age >= 65) {
+                        console.log("You are a senior citizen.");
+                    }
+                }
+            </code></pre>
+        
+            <h3><b>For Loop:</b></h3>
+            <pre><code>
+                for (let i = 0; i < 5; i++) {
+                    console.log("Iteration: " + i);
+                }
+            </code></pre>
+        
+            <h3><b>While Loop:</b></h3>
+            <pre><code>
+                let i = 0;
+                while (i < 5) {
+                    console.log("Iteration: " + i);
+                    i++;
+                }
+            </code></pre>
+        
+            <h3><b>Do-While Loop:</b></h3>
+            <pre><code>
+                let i = 0;
+                do {
+                    console.log("Iteration: " + i);
+                    i++;
+                } while (i < 5);
+            </code></pre>
+        </section>
+        
+        <section id="DOMContent" class="section">
+            <h1>8.DOM (Document Object Model)</h1>
+            <h3><b>What is the DOM?</b></h3>
+            <p>The DOM is a programming interface for web documents. It represents an HTML or XML document as a tree of objects. Each element (like <code>&lt;div&gt;</code>, <code>&lt;h1&gt;</code>, etc.) in an HTML document becomes a node in the DOM tree. JavaScript can interact with and manipulate the DOM to dynamically change the content, structure, or style of a web page.</p>
+    
+            <h3><b>Accessing DOM Elements:</b></h3>
+            <p>1. Select Elements by ID:</p>
+            <pre><code>
+                let myDiv = document.getElementById("myDiv");
+                console.log(myDiv.innerHTML); // Outputs: Hello, World!
+            </code></pre>
+            
+            <p>2. Select Elements by Class:</p>
+            <pre><code>
+                let boxes = document.getElementsByClassName("box");
+                console.log(boxes[0].innerHTML); // Outputs: Box 1
+            </code></pre>
+            
+            <p>3. Select Elements by Tag Name:</p>
+            <pre><code>
+                let paragraphs = document.getElementsByTagName("p");
+                console.log(paragraphs[1].innerHTML); // Outputs: Paragraph 2
+            </code></pre>
+            
+            <p>4. Query Selectors:</p>
+            <pre><code>
+                let firstBox = document.querySelector(".box"); // Selects the first element with class 'box'
+                console.log(firstBox.id); // Outputs: firstBox
+    
+                let allBoxes = document.querySelectorAll(".box"); // Selects all elements with class 'box'
+                console.log(allBoxes.length); // Outputs: 2
+            </code></pre>
+    
+            <h3><b>Manipulating DOM Elements:</b></h3>
+            <p>1. Change Content:</p>
+            <pre><code>
+                document.getElementById("myDiv").innerHTML = "Updated Text!";
+            </code></pre>
+    
+            <p>2. Change Style:</p>
+            <pre><code>
+                document.getElementById("myDiv").style.color = "blue";
+                document.getElementById("myDiv").style.fontSize = "20px";
+            </code></pre>
+    
+            <p>3. Add/Remove Classes:</p>
+            <pre><code>
+                let div = document.getElementById("myDiv");
+                div.classList.remove("red");
+                div.classList.add("blue"); // Changes text color to blue
+            </code></pre>
+    
+            <p>4. Create and Append Elements:</p>
+            <pre><code>
+                let newItem = document.createElement("li");
+                newItem.innerHTML = "Item 2";
+                document.getElementById("list").appendChild(newItem);
+            </code></pre>
+    
+            <p>5. Remove Elements:</p>
+            <pre><code>
+                let list = document.getElementById("list");
+                let item2 = document.getElementById("item2");
+                list.removeChild(item2); // Removes 'Item 2'
+            </code></pre>
+    
+            <h3><b>Event Handling:</b></h3>
+            <p>1. Event Listener:</p>
+            <pre><code>
+                let button = document.getElementById("myButton");
+                button.addEventListener("click", function () {
+                    alert("Button clicked!");
+                });
+            </code></pre>
+            
+            <p>2. Inline Event Handling:</p>
+            <pre><code>
+                button onclick="alert('Inline click!')">Click Me button <br>
+                <button onclick="alert('Inline click!')">Click Me</button>
+            </code></pre>
+            
+            <p>3. Remove Event Listener:</p>
+            <pre><code>
+                let button = document.getElementById("myButton");
+                function handleClick() {
+                    alert("Button clicked!");
+                }
+                button.addEventListener("click", handleClick);
+                button.removeEventListener("click", handleClick); // Removes the event
+            </code></pre>
+            
+            <p>4. Common Event Types:</p>
+            <ul>
+                <li><b>click:</b> Triggered when an element is clicked.</li>
+                <li><b>mouseover:</b> Triggered when the mouse hovers over an element.</li>
+                <li><b>mouseout:</b> Triggered when the mouse leaves an element.</li>
+                <li><b>keydown:</b> Triggered when a key is pressed.</li>
+                <li><b>keyup:</b> Triggered when a key is released.</li>
+                <li><b>change:</b> Triggered when an input value changes.</li>
+                <li><b>submit:</b> Triggered when a form is submitted.</li>
+            </ul>
+    
+            <h3><b>Event Object:</b></h3>
+            <pre><code>
+                <button id="myButton">Click Me</button>
+
+                let button = document.getElementById("myButton");
+                button.addEventListener("click", function (event) {
+                    console.log(event.type);  // Outputs: click
+                    console.log(event.target); // Outputs: 
+                });
+            </code></pre>
+    
+            <h3><b>Prevent Default Behavior:</b></h3>
+            <pre><code>
+                document.getElementById("myLink").addEventListener("click", function (event) {
+                    event.preventDefault();
+                    alert("Link click prevented!");
+                });
+            </code></pre>
+    
+            <h3><b>Event Delegation:</b></h3>
+            <pre><code>
+                let list = document.getElementById("list");
+                list.addEventListener("click", function (event) {
+                    if (event.target.tagName === "LI") {
+                        alert(event.target.innerHTML); // Alerts clicked list item
+                    }
+                });
+            </code></pre>
+        </section>
+        
+        <section id="FetchAPI" class="section">
+            <h1>9. Fetch API</h1>
+            <h3><b>Fetch Data:</b></h3>
+            <pre><code>
+                fetch('https://api.example.com/data')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log(data);
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with the fetch operation:', error);
+                    });
+            </code></pre>
+        </section>
+
+        <section id="AsyncJavaScript" class="section">
+            <h1>10. Asynchronous JavaScript</h1>
+            <h3><b>Promises:</b></h3>
+            <p>A <b>Promise</b> represents a value that may be available now, or in the future, or never. It's a way of handling asynchronous operations like data fetching.</p>
+            
+            <pre><code>
+                let promise = new Promise((resolve, reject) => {
+                    let success = true;
+                    if(success) {
+                        resolve("Operation Successful");
+                    } else {
+                        reject("Operation Failed");
+                    }
+                });
+                
+                promise
+                    .then(result => console.log(result)) // "Operation Successful"
+                    .catch(error => console.log(error)); // "Operation Failed"
+            </code></pre>
+        
+            <h3><b>Async/Await:</b></h3>
+            <p>The <b>async/await</b> syntax makes working with asynchronous code more readable. It is based on Promises.</p>
+        
+            <pre><code>
+                async function fetchData() {
+                    try {
+                        let response = await fetch('https://jsonplaceholder.typicode.com/posts');
+                        let data = await response.json();
+                        console.log(data);
+                    } catch (error) {
+                        console.error('Error fetching data:', error);
+                    }
+                }
+        
+                fetchData();
+            </code></pre>
+        </section>
+        <section id="Closures" class="section">
+            <h1>11. Closures in JavaScript</h1>
+            <h3><b>What is a Closure?</b></h3>
+            <p>A <b>closure</b> is a function that "remembers" its lexical environment, even when the function is executed outside that environment. This is possible because inner functions have access to variables of outer functions.</p>
+        
+            <pre><code>
+                function outerFunction(outerVariable) {
+                    return function innerFunction(innerVariable) {
+                        console.log("Outer Variable: " + outerVariable);
+                        console.log("Inner Variable: " + innerVariable);
+                    };
+                }
+        
+                const closureExample = outerFunction('Outer');
+                closureExample('Inner'); // Outer Variable: Outer, Inner Variable: Inner
+            </code></pre>
+        </section>
+                
+        <section id="JSModules" class="section">
+            <h1>9. JavaScript Modules</h1>
+            <h3><b>What are Modules?</b></h3>
+            <p>Modules are a way of organizing code into separate files. This allows for better code structure, maintenance, and reuse. Modules can be imported and exported in JavaScript to share functionality between files.</p>
+        
+            <h3><b>Exporting and Importing Modules:</b></h3>
+            <pre><code>
+        // math.js (Module)
+        export function add(a, b) {
+            return a + b;
+        }
+        
+        export function subtract(a, b) {
+            return a - b;
+        }
+        
+        // app.js
+        import { add, subtract } from './math.js';
+        
+        console.log(add(2, 3)); // 5
+        console.log(subtract(5, 2)); // 3
+            </code></pre>
+        
+            <h3><b>Default Exports:</b></h3>
+            <pre><code>
+        // myModule.js
+        export default function greet(name) {
+            return "Hello, " + name;
+        }
+        
+        // app.js
+        import greet from './myModule.js';
+        console.log(greet('Alice')); // Hello, Alice
+            </code></pre>
+        </section>
+        <section id="DesignPatterns" class="section">
+            <h1>12. JavaScript Design Patterns</h1>
+            <h3><b>Module Pattern:</b></h3>
+            <p>The <b>Module Pattern</b> is used to create private and public methods in an object to maintain encapsulation.</p>
+        
+            <pre><code>
+                const CounterModule = (function() {
+                    let count = 0;
+        
+                    return {
+                        increment: function() {
+                            count++;
+                            console.log(count);
+                        },
+                        decrement: function() {
+                            count--;
+                            console.log(count);
+                        },
+                        getCount: function() {
+                            return count;
+                        }
+                    };
+                })();
+        
+                CounterModule.increment(); // 1
+                CounterModule.increment(); // 2
+                CounterModule.decrement(); // 1
+                console.log(CounterModule.getCount()); // 1
+            </code></pre>
+        
+            <h3><b>Singleton Pattern:</b></h3>
+            <p>The <b>Singleton Pattern</b> ensures that a class has only one instance, and provides a global point of access to it.</p>
+        
+            <pre><code>
+                const Singleton = (function() {
+                    let instance;
+        
+                    function createInstance() {
+                        return { name: "Singleton" };
+                    }
+        
+                    return {
+                        getInstance: function() {
+                            if (!instance) {
+                                instance = createInstance();
+                            }
+                            return instance;
+                        }
+                    };
+                })();
+        
+                const instance1 = Singleton.getInstance();
+                const instance2 = Singleton.getInstance();
+        
+                console.log(instance1 === instance2); // true
+            </code></pre>
+        </section>
+        <section id="HigherOrderFunctions" class="section">
+            <h1>13. Higher-Order Functions</h1>
+            <h3><b>What is a Higher-Order Function?</b></h3>
+            <p>A <b>higher-order function</b> is a function that either accepts a function as an argument or returns a function. JavaScript has many built-in higher-order functions like <code>map</code>, <code>filter</code>, and <code>reduce</code>.</p>
+        
+            <h3><b>Example of a Higher-Order Function:</b></h3>
+            <pre><code>
+                function multiply(a, b) {
+                    return a * b;
+                }
+        
+                function calculate(a, b, operation) {
+                    return operation(a, b);
+                }
+        
+                console.log(calculate(5, 3, multiply)); // 15
+            </code></pre>
+        
+            <h3><b>Using Built-in Higher-Order Functions:</b></h3>
+            <pre><code>
+                const numbers = [1, 2, 3, 4, 5];
+                
+                // map() example
+                const doubled = numbers.map(num => num * 2);
+                console.log(doubled); // [2, 4, 6, 8, 10]
+        
+                // filter() example
+                const evenNumbers = numbers.filter(num => num % 2 === 0);
+                console.log(evenNumbers); // [2, 4]
+        
+                // reduce() example
+                const sum = numbers.reduce((acc, num) => acc + num, 0);
+                console.log(sum); // 15
+            </code></pre>
+        </section>
+        <section id="EventLoop" class="section">
+            <h1>14. JavaScript Event Loop and Call Stack</h1>
+            <h3><b>Call Stack:</b></h3>
+            <p>The <b>Call Stack</b> is a data structure that keeps track of the execution context. When a function is called, it is added to the call stack, and when it finishes, it is removed.</p>
+        
+            <pre><code>
+                function first() {
+                    console.log("First function");
+                }
+        
+                function second() {
+                    console.log("Second function");
+                    first();
+                }
+        
+                second(); // "Second function" -> "First function"
+            </code></pre>
+        
+            <h3><b>Event Loop:</b></h3>
+            <p>The <b>Event Loop</b> checks if the call stack is empty, and if so, it executes any messages in the message queue (such as callbacks or event handlers).</p>
+        
+            <pre><code>
+                console.log("Start");
+        
+                setTimeout(function() {
+                    console.log("Timeout finished");
+                }, 0);
+        
+                console.log("End"); // "Start" -> "End" -> "Timeout finished"
+            </code></pre>
+        </section>
+                                
+    </main>
+
+     
+<div class="top-btn" id="btn">
+    <button class="top-btn-link" ><i class="fa-solid fa-angle-up fa-flip-horizontal" style="color: #015d01;"></i></button>
+    <script>
+        let mybutton = document.getElementById("btn");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY === 0) {
+              mybutton.style.display = 'none';
+            } else {
+              mybutton.style.display = 'block';
+            }
+          });
+        mybutton.addEventListener("click", ()=>{
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        })
+  
+
+    </script>
+  </div>
+
+    <footer>
+      <div class="container2">
+          <p>&copy; 2024 JavaScript Cheat Sheet | Designed by Vikram G</p>
+      </div>
+  </footer>
+
+  <script>
+  // Update your JavaScript to toggle the navigation bar when the hamburger icon is clicked
+
+  function toggleMenu() {
+    const nav = document.querySelector('.nav');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    nav.classList.toggle('active');
+    menuIcon.style.display = nav.classList.contains('active') ? 'none' : 'block';
+    closeIcon.style.display = nav.classList.contains('active') ? 'block' : 'none';
+}
+const navLinks = document.querySelectorAll('.nav a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        toggleMenu(); // Close the menu when a link is clicked
+    });
+});
+
+</script>
+  <!-- <script>
+     
+        function toggleMenu() {
+          document.querySelector('.nav').classList.toggle('active');
+      }
+  </script> -->
+</body>
+</html>
