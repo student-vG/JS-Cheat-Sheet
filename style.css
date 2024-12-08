@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Reset some default styles */
+::selection{
+  background-color: #00bfff48;
+  text-shadow: 0 0 4px lightgray;
+}
+html::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    color: #000000;
+	background-color: #F5F5F5;
+    
+}
+
+html::-webkit-scrollbar{
+	width: 8px;
+	color: #000000;
+    
+}
+html::-webkit-scrollbar-thumb {
+    border-radius: 30px 1px;
+    box-shadow: 3px 8px 6px rgb(123, 122, 122);
+    background-color: rgb(0, 0, 0);
+    /* background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; */
+    background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+    background-blend-mode: multiply,multiply;
+    transition: all linear 0.5s;
+    -webkit-transition: all linear 0.5s;
+    -moz-transition: all linear 0.5s;
+    -ms-transition: all linear 0.5s;
+    -o-transition: all linear 0.5s;
+}
+html::-webkit-scrollbar-thumb:active {
+    box-shadow: 1px 5px 6px rgb(118, 117, 117);
+    background: linear-gradient(120deg, #5debf6 0%, #3e8efe 100%);
+}
+
+
+*{
+  font-family: "Noto Sans Display","Poppins", sans-serif;
+}
+body, h1, h2, p, ul {
+  margin: 0;
+  padding: 0;
+
+
+}
+
+/* Body styles */
+body {
+  width: 100%;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  opacity: .9;
+}
+
+/* Header styles */
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: #007acc;
+  background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  z-index: -1;
+  /* position: sticky;
+  top: 0; */
+
+
+  & h1{
+    font-size: 2.1rem;
+  }
+}
+
+.hd-title{
+  /* border: 1px solid red; */
+  font-size: 2rem;
+  width: 50%;
+  margin-left: 20px;
+  display: flex;
+  align-content: left;
+  align-items: center;
+  justify-content: start;
+
+  & a img{
+    align-items: center;
+    opacity: .9;
+    margin-right: 20px;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+}
+
+
+main{
+  z-index: 111;
+}
+/* Navigation styles */
+.container {
+  /* border: 1px solid red; */
+  width: 50%;
+  display: flex;
+  height: 74px;
+  justify-content:flex-end;
+  align-items: center;
+  max-width: 1200px;
+  margin: 5px;
+  padding: 0 20px;
+}
+
+.hamburger {
+  cursor: pointer;
+  font-size: 30px;
+  z-index: 9999;
+}
+body {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.nav {
+  position: absolute;
+  top: 125px;
+  right: -250px; /* Start off-screen */
+  width: 250px;
+  height: auto;
+  backdrop-filter: blur(3px);
+  background-color: #9dd0ff72; /* Background color */
+  transition: right 0.3s ease; /* Animation for sliding */
+  z-index: 1000; /* Ensure it is above other content */
+}
+
+.nav.active {
+  right: 0; /* Slide in */
+}
+
+.nav ul {
+  height: auto;
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav ul li {
+  padding: 15px;
+  text-align: start;
+}
+
+.nav ul li a {
+  padding: 20px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+
+  & span{
+    font-size: 14px;
+    color: #ffffff;
+  }
+}
+
+.nav ul li a:hover {
+  color: rgb(0, 0, 0);
+  background-color: #9dd0ff5d;
+  font-weight: 600;
+}
+
+.hamburger {
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+}
+/* Main section styles */
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #007acc;
+  margin-bottom: 10px;
+}
+
+pre {
+  background: #f1f1f1;
+  box-shadow: inset 0 0 40px rgba(211, 211, 211, 0.512);
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+pre code{
+  font-size: 15px;
+}
+
+#DOMContent ul li{
+  list-style: "👉 ";
+  margin-left: 45px;
+}
+/* Footer styles */
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background: #007acc;
+  background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+  color: #fff;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+
+/*** tap to up css ***/
+
+.top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  padding: 20px;
+
+  z-index: 99999;
+  cursor: pointer;
+  transition: all linear 0.3s;
+  color: #ffffff;
+  
+  background-image: linear-gradient(to right, #4facfe30 0%, #00f1fe42 100%);
+
+  
+  & .top-btn-link {
+    font-size: 19px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    color: rgb(83, 155, 255);
+    text-shadow: 10px 10px 10px lightgray;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+.top-btn:hover {
+  color: rgb(0, 115, 255);
+  background-image: linear-gradient(to right, #4facfe30 0%, #00f1fe42 100%);
+}
+
+
+.top-btn {
+  overflow: hidden;
+  transition: all linear 0.5s;
+  animation: appear1  linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+@keyframes appear1 {
+  from{
+      opacity: 0;
+      transform:translateX(80px) ;
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hd-title h1{
+    /* border: 1px solid red; */
+    font-size: 1rem;
+    margin-left: 20px;
+    display: flex;
+    align-content: left;
+    align-items: center;
+    justify-content: start;
+
+    &h1{
+      font-size: 1rem;
+    }
+  }
+  nav{
+    display: none;
+    overflow-x: hidden;
+  }
+  .nav.active{
+    display: block;
+    transition: all linear 2s;
+  }
+
+  
+/*** tap to up css ***/
+
+.top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  padding: 20px;
+
+  z-index: 99999;
+  cursor: pointer;
+  transition: all linear 0.3s;
+  color: #ffffff;
+  
+  background-image: linear-gradient(to right, #4facfe30 0%, #00f1fe42 100%);
+
+  
+  & .top-btn-link {
+    font-size: 19px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    color: rgb(83, 155, 255);
+    text-shadow: 10px 10px 10px lightgray;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+.top-btn:hover {
+  color: rgb(0, 115, 255);
+  background-image: linear-gradient(to right, #4facfe30 0%, #00f1fe42 100%);
+}
+
+
+.top-btn {
+  overflow: hidden;
+  transition: all linear 0.5s;
+  animation: appear1  linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+@keyframes appear1 {
+  from{
+      opacity: 0;
+      transform:translateX(50px) ;
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+footer .container2 p{
+font-size: 14px;
+}
+
+
+.nav {
+  position: absolute;
+  top: 125px;
+  right: -250px; /* Start off-screen */
+  width: 250px;
+  height: auto;
+  backdrop-filter: blur(3px);
+  background-color: #9dd0ff72; /* Background color */
+  transition: right 0.3s ease; /* Animation for sliding */
+  z-index: 1000; /* Ensure it is above other content */
+
+& ul li a span{
+  font-size: 12px;
+color: #bebebe;
+}
+}
+
+.nav.active {
+  right: 0; /* Slide in */
+}
+} 
